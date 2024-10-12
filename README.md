@@ -1,2 +1,3 @@
 # NLP_Course
-南开大学计算机学院NLP课程（Taught by prof. Ying Zhang）实验代码仓库，
+
+This repository contains the code and materials for the course "Natural Language Processing" at the University of NanKai(Taught by Prof. Zhang).

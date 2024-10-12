@@ -1,0 +1,30 @@
+test_loss: 0.429, test_acc: 0.804
+hyper-parameters: Namespace(max_length=256, test_size=0.25, min_freq=5, batch_size=256, embedding_dim=300, n_filters=100, filter_sizes=[3, 5, 7], dropout_rate=0.3, n_epochs=40, device='cuda:1')
+metrics: defaultdict(<class 'list'>, {'train_losses': [np.float64(0.6685722848853549), np.float64(0.62960842976699), np.float64(0.5870290189175993), np.float64(0.560483963908376), np.float64(0.47099092965190476), np.float64(0.4004608453125567)], 'train_accs': [np.float64(0.5866322469066929), np.float64(0.6424827672339775), np.float64(0.6855417667208491), np.float64(0.705886960029602), np.float64(0.7827059038587518), np.float64(0.8246989427386103)], 'valid_losses': [np.float64(0.6001840925216675), np.float64(0.5887492752075195), np.float64(0.6164078092575074), np.float64(0.49750453114509585), np.float64(0.47914196252822877), np.float64(0.41186784029006956)], 'valid_accs': [np.float64(0.6918573117256165), np.float64(0.6883549523353577), np.float64(0.6350471711158753), np.float64(0.7728567218780518), np.float64(0.8031043624877929), np.float64(0.8218278312683105)]})
+vocab: Vocab()
+model: LSTM(
+  (embedding): Embedding(21497, 300, padding_idx=1)
+  (lstm): LSTM(300, 256, num_layers=5, batch_first=True, dropout=0.3, bidirectional=True)
+  (fc): Linear(in_features=256, out_features=2, bias=True)
+  (dropout): Dropout(p=0.3, inplace=False)
+)
+optimizer: Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    capturable: False
+    differentiable: False
+    eps: 1e-08
+    foreach: None
+    fused: None
+    lr: 0.0005
+    maximize: False
+    weight_decay: 0
+)
+criterion: CrossEntropyLoss()
+device: cuda:1
+special_tokens: ['<unk>', '<pad>']
+unk_index: 0
+pad_index: 1
+vocab_size: 21497
+output_dim: 2

@@ -1,0 +1,34 @@
+test_loss: 0.408, test_acc: 0.867
+hyper-parameters: Namespace(max_length=256, test_size=0.25, min_freq=5, batch_size=256, embedding_dim=300, n_filters=100, filter_sizes=[3, 5, 7], dropout_rate=0.3, n_epochs=20, device='cuda:2')
+metrics: defaultdict(<class 'list'>, {'train_losses': [np.float64(0.7265688905844817), np.float64(0.530427765201878), np.float64(0.4597255245253846), np.float64(0.40550595642747106), np.float64(0.3668221178892496), np.float64(0.3211873890580358), np.float64(0.29523363971226924), np.float64(0.2668546220740756), np.float64(0.23652455230822433), np.float64(0.20258089809401617), np.float64(0.18285754504236015), np.float64(0.15694237148036827), np.float64(0.13842293740929784), np.float64(0.12526127484601898), np.float64(0.10376093853768464), np.float64(0.09067989905943742), np.float64(0.07823619478054948), np.float64(0.08073238051823668), np.float64(0.06262014005836603), np.float64(0.059357850787204666)], 'train_accs': [np.float64(0.60975302393372), np.float64(0.7362055222730379), np.float64(0.7781798299905416), np.float64(0.8137260240477484), np.float64(0.8343845356155086), np.float64(0.8599471441797308), np.float64(0.8722141997234242), np.float64(0.8869077619668599), np.float64(0.9007124562521238), np.float64(0.9178291188704001), np.float64(0.9271264704498084), np.float64(0.9357767540055353), np.float64(0.9441375595492285), np.float64(0.9508602603061779), np.float64(0.9616169212637721), np.float64(0.9649952996421505), np.float64(0.970003269008688), np.float64(0.9698312846389977), np.float64(0.9762781302671175), np.float64(0.9781393030205289)], 'valid_losses': [np.float64(0.5221378004550934), np.float64(0.438812757730484), np.float64(0.3941519355773926), np.float64(0.36930791854858397), np.float64(0.3733224058151245), np.float64(0.3379207193851471), np.float64(0.33430652976036074), np.float64(0.3259820699691772), np.float64(0.3195058023929596), np.float64(0.3274360913038254), np.float64(0.3350064080953598), np.float64(0.33307664811611176), np.float64(0.3438028979301453), np.float64(0.3588292741775513), np.float64(0.379488480091095), np.float64(0.3644723069667816), np.float64(0.37736221313476564), np.float64(0.38311259627342226), np.float64(0.43285544037818907), np.float64(0.40283364057540894)], 'valid_accs': [np.float64(0.7359846711158753), np.float64(0.7936910390853882), np.float64(0.8198614382743835), np.float64(0.8348349070549012), np.float64(0.8316185140609741), np.float64(0.8518661570549011), np.float64(0.8538590812683106), np.float64(0.8608107328414917), np.float64(0.8670341992378234), np.float64(0.8666568398475647), np.float64(0.8679068398475647), np.float64(0.8728803062438965), np.float64(0.8692482328414917), np.float64(0.874260025024414), np.float64(0.8691951656341552), np.float64(0.8727771234512329), np.float64(0.8758107328414917), np.float64(0.869339623451233), np.float64(0.8642216992378234), np.float64(0.8753419828414917)]})
+vocab: Vocab()
+model: CNN(
+  (embedding): Embedding(21559, 300, padding_idx=1)
+  (convs): ModuleList(
+    (0): Conv1d(300, 100, kernel_size=(3,), stride=(1,))
+    (1): Conv1d(300, 100, kernel_size=(5,), stride=(1,))
+    (2): Conv1d(300, 100, kernel_size=(7,), stride=(1,))
+  )
+  (fc): Linear(in_features=300, out_features=2, bias=True)
+  (dropout): Dropout(p=0.3, inplace=False)
+)
+optimizer: Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    capturable: False
+    differentiable: False
+    eps: 1e-08
+    foreach: None
+    fused: None
+    lr: 0.001
+    maximize: False
+    weight_decay: 0
+)
+criterion: CrossEntropyLoss()
+device: cuda:2
+special_tokens: ['<unk>', '<pad>']
+unk_index: 0
+pad_index: 1
+vocab_size: 21559
+output_dim: 2

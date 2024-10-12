@@ -1,0 +1,34 @@
+test_loss: 0.378, test_acc: 0.826
+hyper-parameters: Namespace(max_length=256, test_size=0.25, min_freq=5, batch_size=256, embedding_dim=300, n_filters=100, filter_sizes=[3, 5, 7], dropout_rate=0.3, n_epochs=40, device='cuda:1')
+metrics: defaultdict(<class 'list'>, {'train_losses': [np.float64(0.6974760245632481), np.float64(0.5139834631133724), np.float64(0.4397683779935579), np.float64(0.3944415192346315)], 'train_accs': [np.float64(0.6156856200179538), np.float64(0.745087388399485), np.float64(0.7939427575549564), np.float64(0.8198084670144159)], 'valid_losses': [np.float64(0.49981589198112486), np.float64(0.44235557317733765), np.float64(0.4046199107170105), np.float64(0.38476704120635985)], 'valid_accs': [np.float64(0.7496550703048706), np.float64(0.7975972890853882), np.float64(0.8170106124877929), np.float64(0.8219339632987976)]})
+vocab: Vocab()
+model: CNN(
+  (embedding): Embedding(21497, 300, padding_idx=1)
+  (convs): ModuleList(
+    (0): Conv1d(300, 100, kernel_size=(3,), stride=(1,))
+    (1): Conv1d(300, 100, kernel_size=(5,), stride=(1,))
+    (2): Conv1d(300, 100, kernel_size=(7,), stride=(1,))
+  )
+  (fc): Linear(in_features=300, out_features=2, bias=True)
+  (dropout): Dropout(p=0.3, inplace=False)
+)
+optimizer: Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    capturable: False
+    differentiable: False
+    eps: 1e-08
+    foreach: None
+    fused: None
+    lr: 0.001
+    maximize: False
+    weight_decay: 0
+)
+criterion: CrossEntropyLoss()
+device: cuda:1
+special_tokens: ['<unk>', '<pad>']
+unk_index: 0
+pad_index: 1
+vocab_size: 21497
+output_dim: 2
